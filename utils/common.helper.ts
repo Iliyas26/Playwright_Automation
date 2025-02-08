@@ -2,12 +2,15 @@ import { Locator, Page } from '../fixtures/base.fixture';
 
 export default class CommonHelper {
     public readonly page: Page;
-    constructor(page: Page) {}
+
+    constructor(page: Page) {
+        this.page = page;
+    }
 
     /**
      * Handle dropdown selection by text
      */
-    async selectDropdownByText(dropdown: Locator, optionText: string): Promise<void> {
+    public async selectDropdownByText(dropdown: Locator, optionText: string): Promise<void> {
         await dropdown.click();
         await this.page.getByText(optionText, { exact: true }).click();
     }

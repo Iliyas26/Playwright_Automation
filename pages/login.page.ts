@@ -10,6 +10,7 @@ export default class LoginPage {
     private readonly loginLink: Locator;
 
     constructor(page: Page) {
+        this.page = page;
         this.emailInput = page.getByPlaceholder('E-Mail Address');
         this.passwordInput = page.getByPlaceholder('Password');
         this.loginButton = page.getByRole('button', { name: 'Login' });
